@@ -26,9 +26,12 @@ public class CanvasFrame extends Frame {
         drawCanvas.setBackground(Color.white);
         rightPanel.add(drawCanvas, "Center");
 
+        DrawThread drawThread = new DrawThread(drawCanvas);
+        drawThread.start();
 
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
+                drawThread.shutdown();
                 System.exit(0);
             }
         });

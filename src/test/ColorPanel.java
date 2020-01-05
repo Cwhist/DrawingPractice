@@ -3,32 +3,41 @@ package test;
 import java.awt.*;
 
 public class ColorPanel extends Panel {
-    private Button black;
-    private Button blue;
-    private Button red;
-    private Button yellow;
+    private Button blackBtn;
+    private Button blueBtn;
+    private Button redBtn;
+    private Button yellowBtn;
 
     public ColorPanel() {
         setLayout(new GridLayout(2,2));
         setBackground(Color.GRAY);
 
-        black = new Button();
-        black.setBackground(Color.BLACK);
+        blackBtn = new Button();
+        blackBtn.setBackground(Color.BLACK);
+        blackBtn.addActionListener(DrawCanvas::setColor);
 
-        blue = new Button();
-        blue.setBackground(Color.BLUE);
+        blueBtn = new Button();
+        blueBtn.setBackground(Color.BLUE);
+        blueBtn.addActionListener(DrawCanvas::setColor);
 
-        red = new Button();
-        red.setBackground(Color.RED);
+        redBtn = new Button();
+        redBtn.setBackground(Color.RED);
+        redBtn.addActionListener(DrawCanvas::setColor);
 
-        yellow = new Button();
-        yellow.setBackground(Color.YELLOW);
+        yellowBtn = new Button();
+        yellowBtn.setBackground(Color.YELLOW);
+        yellowBtn.addActionListener(DrawCanvas::setColor);
 
-        add(black);
-        add(blue);
-        add(red);
-        add(yellow);
+        add(blackBtn);
+        add(blueBtn);
+        add(redBtn);
+        add(yellowBtn);
     }
+
+    public Button getBlackBtn() { return blackBtn; }
+    public Button getBlueBtn() { return blueBtn; }
+    public Button getRedBtn() { return redBtn; }
+    public Button getYellowBtn() { return yellowBtn; }
 
     @Override
     public Insets getInsets() {
