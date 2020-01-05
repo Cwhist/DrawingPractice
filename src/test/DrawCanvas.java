@@ -27,6 +27,7 @@ public class DrawCanvas extends Canvas implements MouseListener, MouseMotionList
             oldY = curY;
             curX = e.getX();
             curY = e.getY();
+            System.out.println(curX + ", " + curY + " ... " + oldX + ", " + oldY);
         }
     }
 
@@ -76,7 +77,13 @@ public class DrawCanvas extends Canvas implements MouseListener, MouseMotionList
     public boolean getIsDrawing() { return isDrawing; }
 
     public static void setColor(ActionEvent e) {
-        System.out.println(e.getSource());
-        color = new Color(Color.BLACK.getRGB());
+        if(e.getActionCommand() == "black")
+            color = new Color(Color.BLACK.getRGB());
+        else if(e.getActionCommand() == "blue")
+            color = new Color(Color.BLUE.getRGB());
+        else if(e.getActionCommand() == "red")
+            color = new Color(Color.RED.getRGB());
+        else
+            color = new Color(Color.YELLOW.getRGB());
     }
 }

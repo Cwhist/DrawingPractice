@@ -12,19 +12,21 @@ public class ColorPanel extends Panel {
         setLayout(new GridLayout(2,2));
         setBackground(Color.GRAY);
 
-        blackBtn = new Button();
+        blackBtn = new Button("black");
+        blackBtn.setForeground(Color.white);
         blackBtn.setBackground(Color.BLACK);
         blackBtn.addActionListener(DrawCanvas::setColor);
 
-        blueBtn = new Button();
+        blueBtn = new Button("blue");
+        blueBtn.setForeground(Color.white);
         blueBtn.setBackground(Color.BLUE);
         blueBtn.addActionListener(DrawCanvas::setColor);
 
-        redBtn = new Button();
+        redBtn = new Button("red");
         redBtn.setBackground(Color.RED);
         redBtn.addActionListener(DrawCanvas::setColor);
 
-        yellowBtn = new Button();
+        yellowBtn = new Button("yellow");
         yellowBtn.setBackground(Color.YELLOW);
         yellowBtn.addActionListener(DrawCanvas::setColor);
 

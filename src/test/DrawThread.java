@@ -16,9 +16,8 @@ public class DrawThread extends Thread {
         while(isRunning) {
             if(dc.getIsDrawing())
                 dc.render();
-
             try {
-                Thread.sleep(1);
+                Thread.sleep(0,0);
             }
             catch (InterruptedException e) {
                 e.printStackTrace();
